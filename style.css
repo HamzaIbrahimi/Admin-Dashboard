@@ -11,6 +11,7 @@
 
 :root {
     font-family: my-roboto, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: var(--card-bg-color);
     /* Custom Properties for color palette dashboard design */
     --dash-section-bg: #1f2937;
     --button-bg-color: #e5e7eb;
@@ -20,21 +21,66 @@
     --search-bg-color: #6b7280;
 }
 
+
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    
+}
+/* Side bar Section ... */
 /* Reduce all logo sizes to a similar value */
 img {
+    width: 30px;
+    height: 30px;
+}
+/* Exception for Dashboard svg */
+.dash-logo img {
     width: 50px;
-    height: 50px;
+    height: 50px ;
 }
 
 .sidebar {
     background: var(--dash-section-bg);
+    padding: 0 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    
 }
 
 .top {
     display: flex;
     color: #fff;
     align-items: center;
-    gap: 7px;
-    margin-left: 10px;
+    gap: 10px;
+}
+
+.header-dash ~ div {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 20px;
+    
+}
+
+.sidebar .lastcontent {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin-top: 50px;
+    
+}
+
+.lastcontent > div {
+    display: flex;
+    gap: 15px;
+}
+
+a {
+    text-decoration: none;
+}
+a:visited {
+    color: inherit;
 }
 
