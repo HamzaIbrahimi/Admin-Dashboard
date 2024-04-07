@@ -1,6 +1,8 @@
 @font-face {
     font-family: my-roboto;
     src: url(./fonts/Roboto/Roboto-Light.ttf);
+    font-family: robot-bold;
+    src: url(./fonts/Roboto/Roboto-Bold.ttf);
 }
 
 * {
@@ -19,14 +21,12 @@
     --left-border-card: #030712;
     --card-bg-color: #f9fafb;
     --search-bg-color: #6b7280;
+    --top-bg-color: #4b5563;
 }
-
-
 
 .container {
     display: grid;
-    grid-template-columns: 1fr 3fr;
-    
+    grid-template-columns: minmax(300px, 20%) 2fr;  
 }
 /* Side bar Section ... */
 /* Reduce all logo sizes to a similar value */
@@ -45,7 +45,8 @@ img {
     padding: 0 10px;
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 30px;   
+    min-height: 100vh;
     
 }
 
@@ -60,27 +61,78 @@ img {
     display: flex;
     align-items: center;
     gap: 15px;
-    font-size: 20px;
-    
+    font-size: 20px;   
+    margin-left: 10px;
 }
 
 .sidebar .lastcontent {
     display: flex;
     flex-direction: column;
     align-items: start;
-    margin-top: 50px;
-    
+    margin-top: 50px;  
 }
 
 .lastcontent > div {
     display: flex;
     gap: 15px;
+    align-items: center;
 }
 
 a {
     text-decoration: none;
 }
+
 a:visited {
     color: inherit;
 }
+
+.headercontent {
+    display: grid;
+    grid-template-rows: 100px 100px 3fr;
+}
+
+.searchandprofile {
+    display: flex;
+    justify-content: space-between;
+    background: var(--top-bg-color);
+    align-items: center;
+}
+
+.searcharea,
+.profilearea {
+    display: flex;
+    align-items: center;
+    
+}
+
+.searcharea {
+    gap: 10px;
+    margin-left: 10px;
+}
+
+.profilearea {
+    justify-content: end;
+    gap: 30px;
+    flex: 1;
+    margin-right: 10px;
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.profilephoto {
+    object-fit: cover;
+    border-radius: 100%;
+    height: 75px;
+    width: 75px;
+}
+
+input {
+    width: 500px;
+    padding: 10px;
+    border-radius: 15px;
+    height: 40px;
+    border: none;
+}
+
+
 
