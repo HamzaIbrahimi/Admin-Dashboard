@@ -18,15 +18,16 @@
     --dash-section-bg: #1f2937;
     --button-bg-color: #e5e7eb;
     --button-text-color: #111827;
-    --left-border-card: #030712;
+    --black-cardcontainer: #030712;
     --card-bg-color: #f9fafb;
     --search-bg-color: #6b7280;
     --top-bg-color: #4b5563;
+    
 }
 
 .container {
     display: grid;
-    grid-template-columns: minmax(300px, 20%) 2fr;  
+    grid-template-columns: minmax(240px, 20%) 2fr;  
 }
 /* Side bar Section ... */
 /* Reduce all logo sizes to a similar value */
@@ -46,8 +47,7 @@ img {
     display: flex;
     flex-direction: column;
     gap: 30px;   
-    min-height: 100vh;
-    
+    min-height: 100vh;   
 }
 
 .top {
@@ -132,6 +132,13 @@ input {
     border-radius: 15px;
     height: 40px;
     border: none;
+    background-color: var(--search-bg-color);
+    color: var(--button-bg-color);
+    outline: 1px ridge var(--button-bg-color) ;  
+}
+
+input::placeholder {
+    color: var(--button-bg-color);
 }
 
 .uploadsection {
@@ -162,10 +169,28 @@ button {
     border-radius: 12px;
     border: none;
     cursor: pointer;
-    font-weight: 500;
+    font-weight: 700;
 }
 
 button:hover,
 button:active {
     border: 1px solid black;
 }
+
+.card-container {
+    background: var(--black-cardcontainer);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    padding: 10px;
+}
+
+.card {
+    display: grid;
+    border: 1px solid var(--dash-section-bg);
+}
+
+.card div:nth-child(1) {
+    font-size: 24px;
+}
+
