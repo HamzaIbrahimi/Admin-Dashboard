@@ -18,7 +18,7 @@
     --dash-section-bg: #1f2937;
     --button-bg-color: #e5e7eb;
     --button-text-color: #111827;
-    --black-cardcontainer: #030712;
+    --black-card-container: #030712;
     --card-bg-color: #f9fafb;
     --search-bg-color: #6b7280;
     --top-bg-color: #4b5563;
@@ -89,6 +89,7 @@ a:visited {
 .headercontent {
     display: grid;
     grid-template-rows: 100px auto 3fr;
+    font-size: 16px;
 }
 
 .searchandprofile {
@@ -115,7 +116,7 @@ a:visited {
     gap: 30px;
     flex: 1;
     margin-right: 10px;
-    font-size: 25px;
+    font-size: 20px;
     font-weight: 600;
 }
 
@@ -178,19 +179,82 @@ button:active {
 }
 
 .card-container {
-    background: var(--black-cardcontainer);
+    background: var(--black-card-container);
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: auto;
     gap: 16px;
     padding: 10px;
 }
 
-.card {
+.grid-column-one {
     display: grid;
-    border: 1px solid var(--dash-section-bg);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 16px;
+}
+
+.card {
+    border: 1px solid #fff;
+    border-radius: 10px;
+    padding: 10px;
+    border-left: 5px solid var(--card-bg-color);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    line-height: 1.2rem;
+}
+
+.card .card-icons {
+    align-self: end;
+    
 }
 
 .card div:nth-child(1) {
-    font-size: 24px;
+    font-size: 20px;
+    font-weight: 700;
 }
 
+.announcement-trending {
+    display: grid;
+    gap: 16px;
+    grid-template-rows: repeat(2, minmax(400px,500px));
+    
+}
+
+.announcement > div {
+    margin-bottom: 10px;
+}
+
+hr {  
+    width: 250px;
+    margin: 0 auto;
+}
+
+.announcement-trending > div {
+    border: 1px solid #fff;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.one div:nth-child(1),
+.two div:nth-child(1),
+.three div:nth-child(1),
+.four div:nth-child(1) {
+    font-size: 20px;
+    margin: 10px 0;
+    font-weight: 800;
+}
+
+
+.trending {
+    display: flex;
+    flex-direction: column;
+}
+
+.trending > div {
+    display: flex;
+    gap: 20px;
+    /* flex: 1; */
+    align-items: center;
+    justify-content: start;
+}
